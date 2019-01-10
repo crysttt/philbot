@@ -1,5 +1,7 @@
 from flask import Flask, request
 
+#https://docs.google.com/document/d/1802LEUy39LOEYrRhZpHqVZPBKNEAmNBVL7Rxhbl3fCs/edit#
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,7 +12,7 @@ def hello_world():
 def ncss():
     return '<h1>ncss</h1>'
 
-@app.route('/greet')
+@app.route('/greet', methods=['GET', 'POST'])
 def greet_person():
     name = request.values.get('name')
     return f'hi {name}!'

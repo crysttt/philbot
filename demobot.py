@@ -1,6 +1,10 @@
 from flask import Flask, request
 
 #https://docs.google.com/document/d/1802LEUy39LOEYrRhZpHqVZPBKNEAmNBVL7Rxhbl3fCs/edit#
+foods = {
+    'chocolate' : 'no',
+    'raw fish' : 'yes'
+}
 
 app = Flask(__name__)
 
@@ -19,6 +23,14 @@ def greet_person():
         return('ok good bye then, I hope to never see you again :(')
     else:
         return f'hi {name}!'
+
+@app.route('/safe_foods', methods = ['GET', 'POST'])
+def safe_foods():
+    question = request.values.get('text')
+    words = []
+    words = question.split()
+    if words[-1] in foods:
+        return foods[words[-1]]
     
 if __name__ == '__main__':
     app.run()

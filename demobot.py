@@ -30,7 +30,9 @@ def safe_foods():
     words = []
     words = question.split()
     if words[-1] in foods:
-        return foods[words[-1]]
+        return f'{foods[words[-1]]}'
+    else:
+        return 'Pet Bot does not know.'
     
 if __name__ == '__main__':
     app.run()

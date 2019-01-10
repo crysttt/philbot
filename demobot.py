@@ -16,7 +16,7 @@ def ncss():
 def greet_person():
     name = request.values.get('text')
     if 'bye' in name:
-        print('ok good bye then, I hope to never see you again :(')
+        return('ok good bye then, I hope to never see you again :(')
     else:
         return f'hi {name}!'
     

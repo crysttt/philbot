@@ -14,7 +14,7 @@ def ncss():
 
 @app.route('/greet', methods=['GET', 'POST'])
 def greet_person():
-    name = request.values.get('name')
+    name = request.values.get('text')
     return f'hi {name}!'
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ specific = {'dog': ['cinnamon', 'ice cream', 'medicine', 'cat food'], 'cat': ['t
 name = 'Toto'
 
 def no_query_on_enter_state(context):
-    return "How can I help?"
+    return ""
 def no_query_on_input(line, context):
     species = "dinosaur"
     match = re.search('can my pet eat (?P<food>.*)\?', line, re.IGNORECASE)

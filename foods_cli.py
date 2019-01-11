@@ -3,6 +3,10 @@ import foods
 
 app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+    return ' Hello, World!'
+
 
 @app.route('/safe_foods', methods = ['GET', 'POST'])
 def safe_foods():

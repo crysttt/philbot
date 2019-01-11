@@ -11,9 +11,6 @@ foods = {
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return ' Hello, World!'
 
 @app.route('/ncss')
 def ncss():
@@ -26,16 +23,6 @@ def greet_person():
         return('ok good bye then, I hope to never see you again :(')
     else:
         return f'hi {name}!'
-
-#@app.route('/safe_foods', methods = ['GET', 'POST'])
-def safe_foods():
-    question = request.values.get('text')
-    words = []
-    words = question.split()
-    if words[-1] in foods:
-        return f'{foods[words[-1]]}'
-    else:
-        return 'Pet Bot does not know.'
 
     
 if __name__ == '__main__':

@@ -8,6 +8,7 @@ foods = {
     'grapes': 'Cats can, dogs cannot, therefore cats > dogs!'
 }
 
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -26,7 +27,7 @@ def greet_person():
     else:
         return f'hi {name}!'
 
-@app.route('/safe_foods', methods = ['GET', 'POST'])
+#@app.route('/safe_foods', methods = ['GET', 'POST'])
 def safe_foods():
     question = request.values.get('text')
     words = []
@@ -35,6 +36,7 @@ def safe_foods():
         return f'{foods[words[-1]]}'
     else:
         return 'Pet Bot does not know.'
+
     
 if __name__ == '__main__':
     app.run()

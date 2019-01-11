@@ -12,7 +12,8 @@ def hello_world():
 def safe_foods():
     state = 'NO_QUERY'
     context = {}
-    output_string  = ''
+
+    output_string = ''
     output = foods.ON_ENTER_STATE[state](context)
     output_string += output
     
